@@ -1,0 +1,29 @@
+<h2>Registrar productos</h2>
+
+<form [formGroup]="productsForm" class="form px-5" (ngSubmit)="onSubmit()" novalidate>
+    
+    <div class="mb-3">
+        <label class="form-lebel">nombre del producto</label>
+        <input formControlName="nombre" type="text" class="formControl" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-lebel">cantidad</label>
+        <input formControlName="cantidad" type="number" class="formControl" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-lebel">precio</label>
+        <input formControlName="precio" type="number" class="formControl" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-lebel">existencia</label>
+        <input formControlName="existencia" type="boolean" class="formControl" required>
+    </div>
+
+    <button [disabled]="!productsForm.valid" type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+
+

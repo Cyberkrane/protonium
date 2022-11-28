@@ -1,0 +1,29 @@
+<h2 class="text-center">Listado de productos en Stock</h2>
+<div class="d-grip gap-2 mt-4">
+    <a routerLink="/create" class="btn btn-primary" type="button">Create</a>
+</div>
+
+<table class="table table-hover table-striped" >
+
+    <thead>
+        <th>Nombre: </th>
+        <th>Cantidad:</th>
+        <th>Existencia:</th>
+        <th>precio:</th>
+        <th>acciones</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let product of Products">
+            <td>{{product.nombre}} </td>
+            <td>{{product.cantidad}} </td>
+            <td>{{product.existencia}} </td>
+            <td>{{product.precio}} </td>
+            <td>
+                <button routerLink="/edit/:{{product.id}}" class="btn btn-info"><i class="fa-solid fa-pencil"></i></button>
+                <button (click)="deleteRow(product)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
